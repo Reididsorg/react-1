@@ -22,6 +22,7 @@ export const plantList = [
         name: 'pothos argenté',
         category: 'classique',
         id: '3sd',
+        isSpecialOffer: true,
         light: 1,
         water: 2,
         cover: monstera
@@ -51,9 +52,10 @@ export const plantList = [
         cover: monstera
     },
     {
-        name: 'basilique',
+        name: 'basilic',
         category: 'extérieur',
         id: '7ie',
+        isSpecialOffer: true,
         isBestSale: true,
         light: 2,
         water: 3,
@@ -63,6 +65,7 @@ export const plantList = [
         name: 'aloe',
         category: 'plante grasse',
         id: '8fp',
+        isSpecialOffer: true,
         light: 2,
         water: 1,
         cover: monstera
