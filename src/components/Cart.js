@@ -1,12 +1,23 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import Categories from "./Categories";
 import '../styles/Cart.css';
+import {plantList} from "../datas/plantList";
 
-function Cart({ cart, updateCart }) {
+function Cart({ cart, updateCart, activeCategory, setActiveCategory }) {
     const [isOpen, setIsOpen] = useState(true)
     const total = cart.reduce(
         (acc, plantType) => acc + plantType.amount * plantType.price,
         0
     )
+
+    useEffect(() => {
+        // alert(`J'aurai ${total}€ à payer 💸 ${'' === activeCategory ? '' : 'pour la catégorie : ' + activeCategory}`)
+    }, [total, activeCategory])
+
+    useEffect(() => {
+        document.title = `LMJ: ${total}€ d'achats`
+    }, [total])
+
     return isOpen ? (
         <div className='lmj-cart'>
             <button
@@ -25,7 +36,7 @@ function Cart({ cart, updateCart }) {
                             </div>
                         ))}
                     </ul>
-                    <h3>Total : {total}€</h3>
+                    <h3>Total :{total}€</h3>
                     <button onClick={() => updateCart([])}>Vider le panier</button>
                 </div>
             ) : (

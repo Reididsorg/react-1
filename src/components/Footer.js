@@ -1,5 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import '../styles/Footer.css'
+import Cart from "./Cart";
+import ShoppingList from "./ShoppingList";
 
 function Footer() {
     const [inputValue, setInputValue] = useState('')
